@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;500;700&display=swap');
+
+body{
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to right bottom, #000000, #181818, #2a292a, #3c3c3c, #4f4f50, #565657, #5d5e5e, #646565, #606161, #5d5d5d, #595959, #555555);  color: white;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+  height: 100vh;
+}
+
+.container{
+  padding: .5rem 0;
+  margin: 2rem auto;
+  border-radius: 2rem 1rem;
+  background-color: bb;
+}
+
+h1{
+  font-family: 'Montserrat', sans-serif
+}
+
+form{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 1rem auto 3% auto;
+  max-width: 350px;
+  width: 80%;
+}
+
+label{
+  font-weight: 100;
+  margin-bottom: .5rem;
+}
+
+button{
+  padding: .75rem;
+  border-radius: 100vmax;
+  border: none;
+  background-color: black;
+  color: white;
+  font-family: 'Noto Sans', sans-serif;
+  width: 30%;
+  cursor: pointer;
+}
+
+input{
+  padding: .75rem;
+  border-radius: 100vmax;
+  border: none;
+  width: 55%;
+  background-color:#ebebeb;
+}
+
+.card{
+  background: linear-gradient(180deg, rgba(148,148,148,1) 0%, rgba(0,0,0,1) 67%);  width: 75%;
+  margin: 2rem auto;
+  border-radius: 1rem 1.5rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.card img{
+  width: 4rem;
+}
+
+.infoPrincipal{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: solid 1px white;
+  width: 100%;
+  text-align: start;
+}
+
+@media (min-width: 550px){
+  .infoPrincipal{
+    justify-content: space-evenly;
+  }
+  .card{
+    max-width: 600px;
+  }
+}
+
+#tituloCard{
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+#temperatura{
+  font-weight: 100;
+  font-size: 2.5rem;
+  margin: 0 1rem 0 0;
+}
+
+
+.parrafoSecundario{
+  font-weight: 100;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.situacionActual{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  border-bottom: solid 1px white;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.parrafoTerciario{
+  font-weight: 300;
+  font-size: .85rem;
+  margin: .25rem 0;
+  background-color: rgb(37, 37, 37);
+  padding: .15rem .5rem;
+  border-radius: 100vmax;
+}
+
+.dataExtra{
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: .25rem;
+  column-gap: 1rem;
+}
+
+.parrafoError{
+  font-weight: 300;
+  width: 80%;
+  margin: 4rem auto .75rem;
+}
+
+.imgError{
+  width: 3rem;
+}
