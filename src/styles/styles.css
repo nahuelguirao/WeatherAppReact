@@ -3,21 +3,26 @@
 body{
   margin: 0;
   padding: 0;
-  background-image: linear-gradient(to right bottom, #000000, #181818, #2a292a, #3c3c3c, #4f4f50, #565657, #5d5e5e, #646565, #606161, #5d5d5d, #595959, #555555);  color: white;
-  text-align: center;
+  background-image: radial-gradient(circle, #96efff, #90e9fe, #8ae3fd, #86ddfc, #82d7fa, #80d2f9, #7fccf7, #7ec7f5, #7ec1f2, #7fbaef, #81b4eb, #83ade7);  text-align: center;
   font-family: 'Noto Sans', sans-serif;
   height: 100vh;
+  color: white;
 }
 
 .container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: .5rem 0;
-  margin: 2rem auto;
+  margin: 0 auto 1.5rem;
   border-radius: 2rem 1rem;
-  background-color: bb;
+  height: 450px;
 }
 
 h1{
-  font-family: 'Montserrat', sans-serif
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  margin: 1rem;
 }
 
 form{
@@ -25,21 +30,22 @@ form{
   justify-content: center;
   flex-wrap: wrap;
   gap: .5rem;
-  margin: 1rem auto 3% auto;
+  margin: .5rem auto ;
   max-width: 350px;
   width: 80%;
 }
 
 label{
-  font-weight: 100;
+  font-weight: 500;
   margin-bottom: .5rem;
+  color: white;
 }
 
 button{
   padding: .75rem;
   border-radius: 100vmax;
   border: none;
-  background-color: black;
+  background-color: #65a4fc;
   color: white;
   font-family: 'Noto Sans', sans-serif;
   width: 30%;
@@ -51,19 +57,18 @@ input{
   border-radius: 100vmax;
   border: none;
   width: 55%;
-  background-color:#ebebeb;
 }
 
 .card{
-  background: linear-gradient(180deg, rgba(148,148,148,1) 0%, rgba(0,0,0,1) 67%);  width: 75%;
-  margin: 2rem auto;
+  background-image: linear-gradient(to top, #83ade7, #83ade7, #83ade7, #83ade7, #83ade7, #90b1e7, #9bb6e7, #a6bae7, #bbc5e7, #cdd0e7, #dcdce8, #e9e9e9);  color: white;
+  margin: .5rem 1rem;
   border-radius: 1rem 1.5rem;
   padding: 1rem 1.5rem;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+
 
 .card img{
   width: 4rem;
@@ -121,7 +126,7 @@ input{
   font-weight: 300;
   font-size: .85rem;
   margin: .25rem 0;
-  background-color: rgb(37, 37, 37);
+  background-color: #83ADE7;
   padding: .15rem .5rem;
   border-radius: 100vmax;
 }

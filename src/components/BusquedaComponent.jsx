@@ -3,10 +3,6 @@ import { fetchClima } from '../helpers/fetchClima'
 import imagenError from '../assets/iconoError.png'
 
 export const BusquedaComponent = () => {
-    //Parametros para usar fetchClima
-    const urlBase = 'https://api.openweathermap.org/data/2.5/weather'
-    const apiKey = 'f16b764b60a87307ba4f1ef73866b28d'
-
     const [ciudad, setCiudad] = useState('')
     const [infoClima, setInfoClima] = useState(null)
     const [error, setError] = useState(false)
@@ -21,7 +17,7 @@ export const BusquedaComponent = () => {
 
     //Si todo sale bien (es decir retorna datos) se setean con el hook de infoClima, sino se establece el hook de Error a true para mostrar un mensaje en la página + Error en consola
     const fetchInfoClima = async () => {
-        const { datos, error } = await fetchClima(urlBase, ciudad, apiKey)
+        const { datos, error } = await fetchClima(ciudad)
         if (datos) {
             setInfoClima(datos)
             setError(false)
@@ -43,7 +39,7 @@ export const BusquedaComponent = () => {
             </form>
             {/*Si hay información */}
             {infoClima && (
-                <div className='card'>
+                <div className='card fadeIn' key={infoClima.sys.id}>
                     <div className="infoPrincipal">
                         <h2 id='tituloCard'>{infoClima.name}</h2>
                         <p id='temperatura'>{parseInt(infoClima.main.temp - 273.15)}°C</p>
