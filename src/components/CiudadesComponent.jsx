@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/ciudadesComponent.css'
+import '../styles/animacionCarga.css'
 import { fetchClima } from '../helpers/fetchClima';
 
 export const CiudadesComponent = () => {
@@ -20,7 +21,14 @@ export const CiudadesComponent = () => {
         fetchData()
     }, [])
 
-    if (datos.length === 0) return 'Cargando...'
+    if (datos.length === 0) return (
+        <div id="contenedor">
+            <div class="contenedor-loader">
+                <div class="rueda"></div>
+            </div>
+            <div class="cargando">Cargando...</div>
+        </div>
+    )
 
     return (
         <div className='containerSecundario'>
