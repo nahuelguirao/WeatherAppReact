@@ -9,10 +9,12 @@ export const CiudadesComponent = () => {
         const fetchData = async () => {
             const ciudadesPrincipales = ['Londres', 'Nueva York', 'Sydney', 'Tokio']
             try {
+                //Utilizo Promise.all para esperar que esten todos los fetch realizados
                 const resultados = await Promise.all(
                     ciudadesPrincipales.map(async (ciudad) => {
                         return await fetchClima(ciudad)
                     }))
+                //seteo la informacion en datos
                 setDatos(resultados)
             } catch (error) {
                 console.error(error)
@@ -21,6 +23,7 @@ export const CiudadesComponent = () => {
         fetchData()
     }, [])
 
+    //Pestaña de carga mientras realiza las consultas a la API
     if (datos.length === 0) return (
         <div id="contenedor">
             <div class="contenedor-loader">
