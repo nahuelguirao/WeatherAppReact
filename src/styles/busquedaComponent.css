@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;500;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+    color: white;
+    background-image: radial-gradient(circle, #96efff, #90e9fe, #8ae3fd, #86ddfc, #82d7fa, #80d2f9, #7fccf7, #7ec7f5, #7ec1f2, #7fbaef, #81b4eb, #83ade7);
+    /* para texto de error, card, etc  */
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: .75rem;
+    height: 450px;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    margin: .75rem 0;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .75rem;
+    margin: .5rem auto;
+    max-width: 25rem;
+    width: 80%;
+}
+
+label {
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: .5rem;
+}
+
+input {
+    padding: .75rem;
+    border-radius: 100vmax;
+    border: none;
+    width: 55%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+button {
+    padding: .75rem;
+    border-radius: 100vmax;
+    border: none;
+    width: 30%;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #65a4fc;
+    color: white;
+    cursor: pointer;
+}
+
+.card {
+    background-image: linear-gradient(to bottom, #83ade7, #83ade7, #83ade7, #83ade7, #83ade7, #90b1e7, #9bb6e7, #a6bae7, #bbc5e7, #cdd0e7, #dcdce8, #e9e9e9);
+    margin: .5rem 1rem;
+    border-radius: 1rem 1.5rem;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    user-select: none;
+}
+
+.card img {
+    width: 4rem;
+}
+
+.infoPrincipal {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: solid .1rem white;
+}
+
+#tituloCard {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+#temperatura {
+    font-weight: 100;
+    font-size: 2.5rem;
+    margin: 0 1rem 0 0;
+}
+
+.parrafoSecundario {
+    font-weight: 300;
+    font-size: 1.5rem;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.situacionActual {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1.5rem;
+    border-bottom: solid .1rem white;
+    padding: 1rem 0;
+}
+
+.parrafoTerciario {
+    font-weight: 300;
+    font-size: .85rem;
+    margin: .25rem 0;
+    background-color: #83ADE7;
+    padding: .15rem .5rem;
+    border-radius: 100vmax;
+}
+
+.dataExtra {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: .25rem;
+    column-gap: 1rem;
+}
+
+.containerError {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.parrafoError {
+    background-color: #83ADE7;
+    border-radius: 100vmax;
+    padding: .75rem .3rem;
+    font-weight: 800;
+    width: 80%;
+    margin: .75rem auto 4rem;
+}
+
+.imgError {
+    width: 3rem;
+}
