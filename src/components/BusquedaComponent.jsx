@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { fetchClima } from '../helpers/fetchClima'
 import { CiudadBuscadaCard } from './CiudadBuscadaCard'
+import { motion } from 'framer-motion'
 import '../styles/busquedaComponent.css'
 
 export const BusquedaComponent = () => {
@@ -30,7 +31,10 @@ export const BusquedaComponent = () => {
         }
     }
     return (
-        <div className="container">
+        <motion.div
+            className="container"
+            animate={{ x: [-500, -100, 0], opacity: [0.5, 0.75, 1] }}
+        >
             <h1>Clima Actual</h1>
             <form onSubmit={onBusqueda}>
                 <label htmlFor="ciudad">Ingrese una ciudad</label>
@@ -38,7 +42,7 @@ export const BusquedaComponent = () => {
                 <button type='submit'>Buscar</button>
             </form>
             <CiudadBuscadaCard infoBuscada={infoBuscada} error={error} />
-        </div>
+        </motion.div>
 
     )
 }

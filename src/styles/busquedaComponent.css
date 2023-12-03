@@ -5,7 +5,7 @@ body {
     padding: 0;
     font-family: 'Noto Sans', sans-serif;
     color: white;
-    background-image: radial-gradient(circle, #96efff, #90e9fe, #8ae3fd, #86ddfc, #82d7fa, #80d2f9, #7fccf7, #7ec7f5, #7ec1f2, #7fbaef, #81b4eb, #83ade7);
+    background: linear-gradient(to left, #96efff, #90e9fe, #8ae3fd, #86ddfc, #82d7fa, #80d2f9, #7fccf7, #7ec7f5, #7ec1f2, #7fbaef, #81b4eb, #83ade7);
     /* para texto de error, card, etc  */
     text-align: center;
 }

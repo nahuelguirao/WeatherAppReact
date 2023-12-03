@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../styles/ciudadesComponent.css'
 import '../styles/animacionCarga.css'
 import { fetchClima } from '../helpers/fetchClima';
+import { motion } from 'framer-motion'
 
 export const CiudadesComponent = () => {
     const [datos, setDatos] = useState([]);
@@ -26,23 +27,23 @@ export const CiudadesComponent = () => {
     //Pestaña de carga mientras realiza las consultas a la API
     if (datos.length === 0) return (
         <div id="contenedor">
-            <div class="contenedor-loader">
-                <div class="rueda"></div>
+            <div className="contenedor-loader">
+                <div className="rueda"></div>
             </div>
-            <div class="cargando">Cargando...</div>
+            <div className="cargando">Cargando...</div>
         </div>
     )
 
     return (
-        <div className='containerSecundario'>
-            <div className='climaEnVivo fadeIn'>
+        <motion.div className='containerSecundario' animate={{ opacity: [0, 1], x: [-500, -100, 0] }} >
+            <div className='climaEnVivo'>
                 <h2>Clima en vivo</h2>
                 <img src='/iconoVivo.png'></img>
             </div>
-            <div className='cardCiudadesContainer fadeIn'>
+            <div className='cardCiudadesContainer'>
                 {datos.map((ciudad, index) => {
                     return (
-                        <div className='cardCiudades' id='cardEstirable' key={index}>
+                        <motion.div className='cardCiudades' id='cardEstirable' key={index} whileHover={{ scale: 1.05 }} whileInView={{ opacity: [0, 0.5, 0.75, 1] }}>
                             <div className="infoPrincipal">
                                 <h2 id='tituloCard'>{ciudad.datos.name}</h2>
                                 <p id='temperatura'>{ciudad.datos.main.temp}°C</p>
@@ -56,10 +57,10 @@ export const CiudadesComponent = () => {
                                 <p className="parrafoTerciario">Mínima {ciudad.datos.main.temp_min}°C</p>
                                 <p className="parrafoTerciario">Máxima {ciudad.datos.main.temp_max}°C</p>
                             </div>
-                        </div>
+                        </motion.div>
                     )
                 })}
             </div>
-        </div>
+        </motion.div>
     )
 }

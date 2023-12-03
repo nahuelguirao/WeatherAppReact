@@ -12,16 +12,14 @@
 }
 
 .climaEnVivo {
-    border-radius: 100vmax;
+
     margin: 0 auto 1rem;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
     gap: .75rem;
-    background-color: #83ADE7;
     width: 15rem;
-
 }
 
 .climaEnVivo h2 {
@@ -78,11 +76,4 @@
     gap: .75rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     cursor: pointer;
-    transition: transform 1s;
-}
-
-@media (min-width:1250px) {
-    .cardCiudades:hover {
-        transform: scale(1.05);
-    }
 }

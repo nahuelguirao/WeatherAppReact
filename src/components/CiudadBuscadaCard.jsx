@@ -1,12 +1,15 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 export const CiudadBuscadaCard = ({ infoBuscada, error }) => {
     //Estructura de la card con los datos de la ciudad buscada
+    const fadeIn = { opacity: [0, 0.5, 1], x: [-500, -100, 0] }
+
     return (
         <>
             {/*Si hay información */}
             {infoBuscada && (
-                <div className='card fadeIn' key={infoBuscada.sys.id}>
+                <motion.div className='card' key={infoBuscada.sys.id} animate={fadeIn}>
                     <div className="infoPrincipal">
                         <h2 id='tituloCard'>{infoBuscada.name}</h2>
                         <p id='temperatura'>{infoBuscada.main.temp}°C</p>
@@ -20,13 +23,13 @@ export const CiudadBuscadaCard = ({ infoBuscada, error }) => {
                         <p className="parrafoTerciario">Máxima {infoBuscada.main.temp_max}°C</p>
                         <p className='parrafoTerciario'>Humedad {infoBuscada.main.humidity}%</p>
                     </div>
-                </div>)}
+                </motion.div>)}
             {/*Si hay un Error*/}
             {error && (
-                <div className='containerError fadeIn'>
+                <motion.div className='containerError' animate={fadeIn}>
                     <img src='iconoError.png' alt="Icono error" className='imgError' />
                     <p className='parrafoError'>Algo salió mal! Intenta nuevamente.</p>
-                </div>)}
+                </motion.div>)}
         </>
     )
 }
