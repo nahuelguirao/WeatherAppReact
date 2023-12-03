@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 export const CiudadBuscadaCard = ({ infoBuscada, error }) => {
     //Estructura de la card con los datos de la ciudad buscada
-    const fadeIn = { x: [-300, 0] }
+    const fadeIn = { opacity: [0, 0.5, 1] }
 
     return (
         <>
