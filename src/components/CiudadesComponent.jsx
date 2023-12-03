@@ -26,16 +26,16 @@ export const CiudadesComponent = () => {
 
     //Pestaña de carga mientras realiza las consultas a la API
     if (datos.length === 0) return (
-        <div id="contenedor">
+        <motion.div id="contenedor" animate={{ opacity: [0.5, 0] }} transition={{ delay: 2 }}>
             <div className="contenedor-loader">
                 <div className="rueda"></div>
             </div>
             <div className="cargando">Cargando...</div>
-        </div>
+        </motion.div>
     )
 
     return (
-        <motion.div className='containerSecundario' animate={{ opacity: [0, 1], x: [-500, -100, 0] }} >
+        <motion.div className='containerSecundario' animate={{ opacity: [0, 0.5, 1], x: [-500, -100, 0] }} >
             <div className='climaEnVivo'>
                 <h2>Clima en vivo</h2>
                 <img src='/iconoVivo.png'></img>
@@ -43,7 +43,7 @@ export const CiudadesComponent = () => {
             <div className='cardCiudadesContainer'>
                 {datos.map((ciudad, index) => {
                     return (
-                        <motion.div className='cardCiudades' id='cardEstirable' key={index} whileHover={{ scale: 1.05 }} whileInView={{ opacity: [0, 0.5, 0.75, 1] }}>
+                        <motion.div className='cardCiudades' id='cardEstirable' key={index} whileHover={{ scale: 1.05 }} whileInView={{ opacity: [0, 0.5, 1] }}>
                             <div className="infoPrincipal">
                                 <h2 id='tituloCard'>{ciudad.datos.name}</h2>
                                 <p id='temperatura'>{ciudad.datos.main.temp}°C</p>
