@@ -2,12 +2,10 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 export const CiudadBuscadaCard = ({ infoBuscada, error }) => {
-    //Estructura de la card con los datos de la ciudad buscada
     const fadeIn = { opacity: [0, 0.5, 1] }
-
     return (
         <>
-            {/*Si hay información */}
+            {/*Si hay información arma la tarjeta de la ciudad */}
             {infoBuscada && (
                 <motion.div className='card' key={infoBuscada.sys.id} animate={fadeIn}>
                     <div className="infoPrincipal">

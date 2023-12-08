@@ -1,29 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion'
+import { useCiudadesPredeterminadas } from '../hooks/useCiudadesPredeterminadas';
 import '../styles/ciudadesComponent.css'
 import '../styles/animacionCarga.css'
-import { fetchClima } from '../helpers/fetchClima';
-import { motion } from 'framer-motion'
 
 export const CiudadesComponent = () => {
-    const [datos, setDatos] = useState([]);
-    useEffect(() => {
-        const fetchData = async () => {
-            const ciudadesPrincipales = ['Londres', 'Nueva York', 'Sydney', 'Tokio']
-            try {
-                //Utilizo Promise.all para esperar que esten todos los fetch realizados
-                const resultados = await Promise.all(
-                    ciudadesPrincipales.map(async (ciudad) => {
-                        return await fetchClima(ciudad)
-                    }))
-                //seteo la informacion en datos
-                setDatos(resultados)
-            } catch (error) {
-                console.error(error)
-            }
-        }
-        fetchData()
-    }, [])
-
+    const { datos } = useCiudadesPredeterminadas()
     //Pestaña de carga mientras realiza las consultas a la API
     if (datos.length === 0) return (
         <motion.div id="contenedor" animate={{ opacity: [0.5, 0] }} transition={{ delay: 2 }}>
@@ -33,7 +15,7 @@ export const CiudadesComponent = () => {
             <div className="cargando">Cargando...</div>
         </motion.div>
     )
-
+    //Carga las cards de las 4 ciudades predeterminadas
     return (
         <motion.div className='containerSecundario' animate={{ opacity: [0, 0.5, 1], x: [-500, -100, 0] }} >
             <div className='climaEnVivo'>
